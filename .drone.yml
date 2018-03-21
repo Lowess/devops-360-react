@@ -1,0 +1,9 @@
+
+pipeline:
+  build:
+    image: node:alpine
+    commands:
+      - yarn
+      - yarn test
+      - yarn build
+
