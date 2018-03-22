@@ -44,7 +44,7 @@ class App extends Component {
     // Set the list of subjects to display
     this.subjects = subjects["devops"]
     // Set the palette style
-    this.palette = palettes["set_1"]
+    this.palette = palettes["set_2"]
 
 
     this.state = {
