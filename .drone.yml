@@ -1,9 +1,15 @@
 
 
 pipeline:
+  deps:
+   image: plugins/git
+   commands:
+     - git clone https://github.com/Lowess/devops-360-ci-cd.git
+
   build:
     image: node:alpine
     commands:
+      - ls -al /drone/src/github.com/Lowess/*
       - yarn
       - yarn test
       - yarn build
@@ -16,6 +22,10 @@ pipeline:
     when:
       event: tag
 
+   commands:
+     - git clone https://github.com/foo/bar.git
+     - git clone https://github.com/foo/baz.git
+     - git clone https://github.com/foo/qux.git
   notify:
     image: plugins/slack
     environement:
