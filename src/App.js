@@ -5,22 +5,30 @@ import './App.css';
 import GoGear from 'react-icons/lib/go/gear'
 
 const palettes = {
-  // From https://coolors.co/app/52489c-ef476f-ffd166-86bbd8-06d6a0
-  "set_1": [
-    "rgba(207, 255, 179, 1)",
-    "rgba(173, 226, 93, 1)",
-    "rgba(253, 196, 41, 1)",
-    "rgba(59, 112, 128, 1)",
-    "rgba(58, 87, 67, 1)"
+  // Blue theme
+  "blue": [
+    "rgba(201, 228, 202, 1)",
+    "rgba(42, 157, 143, 1)",
+    "rgba(135, 187, 162, 1)",
+    "rgba(59, 96, 100, 1)",
+    "rgba(54, 73, 88, 1)"
   ],
 
-  // From https://coolors.co/app/006d75-00c1b5-c9e8dd-c6003d-4f213a
-  "set_2": [
-    "rgba(50, 199, 135, 1)",
-    "rgba(171, 225, 136, 1)",
-    "rgba(63, 167, 214, 1)",
-    "rgba(250, 192, 94, 1)",
-    "rgba(247, 239, 153, 1)"
+  // Red theme
+  "red": [
+    "rgba(191, 0, 0, 1)",
+    "rgba(197, 34, 51, 1)",
+    "rgba(167, 51, 63, 1)",
+    "rgba(116, 18, 29, 1)",
+    "rgba(88, 12, 31, 1)"
+  ],
+
+  "yellow": [
+    "rgba(252, 216, 52, 1)",
+    "rgba(228, 195, 29, 1)",
+    "rgba(188, 157, 4, 1)",
+    "rgba(208, 154, 4, 1)",
+    "rgba(175, 134, 10, 1)"
   ]
 }
 
@@ -44,7 +52,7 @@ class App extends Component {
     // Set the list of subjects to display
     this.subjects = subjects["devops"]
     // Set the palette style
-    this.palette = palettes["set_2"]
+    this.palette = palettes["red"]
 
 
     this.state = {
