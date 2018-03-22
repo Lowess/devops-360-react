@@ -24,6 +24,11 @@ pipeline:
     when:
       event: tag
 
+  deploy:
+    image: rics3n/drone-ansible
+    inventory: devops-360-ci-cd/inventories/vms
+    playbook: devops-360-ci-cd/spa.yml
+
   notify:
     image: plugins/slack
     environement:
