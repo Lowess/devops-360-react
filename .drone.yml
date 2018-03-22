@@ -22,10 +22,6 @@ pipeline:
     when:
       event: tag
 
-   commands:
-     - git clone https://github.com/foo/bar.git
-     - git clone https://github.com/foo/baz.git
-     - git clone https://github.com/foo/qux.git
   notify:
     image: plugins/slack
     environement:
