@@ -5,21 +5,22 @@ pipeline:
     image: plugins/git
     commands:
       - git clone https://github.com/Lowess/devops-360-ci-cd.git
-    path: devops-360-ci-cd
 
   build:
     image: node:alpine
     commands:
-      - ls -al /drone/src/*
       - yarn
       - yarn test
       - yarn build
+      - tar -zcvf build.tar.gz build/
 
   release:
     image: plugins/github-release
     environement:
       - PLUGIN_API_KEY=<github_token>
     secrets: [ github_token ]
+    files:
+      - build.tar.gz
     when:
       event: tag
 
