@@ -10,8 +10,18 @@ pipeline:
 
   release:
     image: plugins/github-release
-    api_key: <github_token>
+    environement:
+      - PLUGIN_API_KEY=<github_token>
     files: dist/*
     secrets: [ github_token ]
     when:
       event: tag
+
+  slack:
+    image: plugins/slack
+    environement:
+      - SLACK_WEBHOOK=<slack_webhook>
+    channel: drone
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
