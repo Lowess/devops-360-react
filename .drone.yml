@@ -8,3 +8,8 @@ pipeline:
       - yarn test
       - yarn build
 
+  release:
+    image: plugins/github-release
+    tag: v-${DRONE_BUILD_NUMBER}
+    files: dist/*
+    secrets: [ api_key ]
