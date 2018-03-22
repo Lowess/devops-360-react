@@ -12,7 +12,7 @@ pipeline:
       - yarn
       - yarn test
       - yarn build
-      - tar -C build -zcvf build.tar.gz *
+      - tar -zcvf build.tar.gz -C build .
 
   release:
     image: plugins/github-release
