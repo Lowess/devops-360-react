@@ -2,14 +2,15 @@
 
 pipeline:
   deps:
-   image: plugins/git
-   commands:
-     - git clone https://github.com/Lowess/devops-360-ci-cd.git
+    image: plugins/git
+    commands:
+      - git clone https://github.com/Lowess/devops-360-ci-cd.git
+    path: devops-360-ci-cd
 
   build:
     image: node:alpine
     commands:
-      - ls -al /drone/src/github.com/Lowess/*
+      - ls -al /drone/src/*
       - yarn
       - yarn test
       - yarn build
