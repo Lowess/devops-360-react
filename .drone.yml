@@ -10,7 +10,8 @@ pipeline:
 
   release:
     image: plugins/github-release
+    api_key: <github_token>
     files: dist/*
-    secrets: [ api_key ]
+    secrets: [ github_token ]
     when:
       event: tag
