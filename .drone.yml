@@ -12,7 +12,7 @@ pipeline:
       - yarn
       - yarn test
       - yarn build
-      - tar -zcvf build.tar.gz build/
+      - tar -C build -zcvf build.tar.gz *
 
   release:
     image: plugins/github-release
@@ -26,8 +26,11 @@ pipeline:
 
   deploy:
     image: rics3n/drone-ansible
-    inventory: devops-360-ci-cd/inventories/vms
-    playbook: devops-360-ci-cd/spa.yml
+    environement:
+      - PLUGIN_SSH_KEY=<ansible_ssh_key>
+    inventory: devops-360-ci-cd/ansible/inventories/vms
+    playbook: devops-360-ci-cd/ansible/spa.yml
+    secrets: [ ansible_ssh_key ]
 
   notify:
     image: plugins/slack
