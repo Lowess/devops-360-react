@@ -12,7 +12,7 @@ pipeline:
     image: plugins/github-release
     environement:
       - PLUGIN_API_KEY=<github_token>
-    files: dist/*
+    files: build/*
     secrets: [ github_token ]
     when:
       event: tag
