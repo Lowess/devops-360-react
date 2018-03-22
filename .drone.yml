@@ -24,13 +24,13 @@ pipeline:
     when:
       event: tag
 
-  deploy:
-    image: rics3n/drone-ansible
-    environement:
-      - PLUGIN_SSH_KEY=<ansible_ssh_key>
-    inventory: devops-360-ci-cd/ansible/inventories/vms
-    playbook: devops-360-ci-cd/ansible/spa.yml
-    secrets: [ ansible_ssh_key ]
+  # deploy:
+  #   image: rics3n/drone-ansible
+  #   environement:
+  #     - PLUGIN_SSH_KEY=<ansible_ssh_key>
+  #   inventory: devops-360-ci-cd/ansible/inventories/vms
+  #   playbook: devops-360-ci-cd/ansible/spa.yml
+  #   secrets: [ ansible_ssh_key ]
 
   notify:
     image: plugins/slack
