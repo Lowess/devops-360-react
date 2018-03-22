@@ -1,4 +1,5 @@
 
+
 pipeline:
   build:
     image: node:alpine
