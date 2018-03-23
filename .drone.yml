@@ -27,8 +27,6 @@ pipeline:
   deploy:
     image: lowess/drone-ansible
     pull: true
-    volumes:
-      - /root/.ssh:/tmp
     inventory: devops-360-ci-cd/ansible/inventories/vms
     playbook: devops-360-ci-cd/ansible/spa.yml
     galaxy_requirements: devops-360-ci-cd/ansible/requirements.yml
