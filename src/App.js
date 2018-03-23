@@ -52,7 +52,7 @@ class App extends Component {
     // Set the list of subjects to display
     this.subjects = subjects["devops"]
     // Set the palette style
-    this.palette = palettes["red"]
+    this.palette = palettes["yellow"]
 
 
     this.state = {
