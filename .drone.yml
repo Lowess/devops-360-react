@@ -31,7 +31,7 @@ pipeline:
     playbook: devops-360-ci-cd/ansible/spa.yml
     galaxy_requirements: devops-360-ci-cd/ansible/requirements.yml
     tags: spa
-    secrets: [ plugin_ssh_private_key ]
+    secrets: [ ssh_private_key ]
 
 
   # notify:
