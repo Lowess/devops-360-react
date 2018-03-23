@@ -25,7 +25,7 @@ pipeline:
   #     event: tag
 
   deploy:
-    image: Lowess/drone-ansible
+    image: lowess/drone-ansible
     environement:
       - PLUGIN_SSH_PRIVATE_KEY=<ansible_ssh_key>
     inventory: devops-360-ci-cd/ansible/inventories/vms
