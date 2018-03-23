@@ -27,7 +27,7 @@ pipeline:
   deploy:
     image: lowess/drone-ansible
     environement:
-      - PLUGIN_SSH_PRIVATE_KEY='mykey'
+      - PLUGIN_SSH_PRIVATE_KEY=<ssh_private_key>
     inventory: devops-360-ci-cd/ansible/inventories/vms
     playbook: devops-360-ci-cd/ansible/spa.yml
     galaxy_requirements: devops-360-ci-cd/ansible/requirements.yml
