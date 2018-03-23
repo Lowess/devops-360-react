@@ -30,6 +30,7 @@ pipeline:
       - PLUGIN_SSH_PRIVATE_KEY=<ansible_ssh_key>
     inventory: devops-360-ci-cd/ansible/inventories/vms
     playbook: devops-360-ci-cd/ansible/spa.yml
+    galaxy_requirements: devops-360-ci-cd/ansible/requirements.yml
     tags: spa
     secrets: [ ansible_ssh_key ]
 
