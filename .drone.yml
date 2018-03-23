@@ -35,6 +35,7 @@ pipeline:
     tags: spa
     secrets: [ plugin_ssh_private_key ]
 
+
   # notify:
   #   image: plugins/slack
   #   environement:
