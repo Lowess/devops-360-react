@@ -11,8 +11,14 @@ pipeline:
     commands:
       - yarn
       - yarn test
+
+  pre-release:
+    image: node:alpine
+    commands:
       - yarn build
       - tar -zcvf build.tar.gz -C build .
+    when:
+      event: tag
 
   release:
     image: plugins/github-release
@@ -30,6 +36,8 @@ pipeline:
     inventory: devops-360-ci-cd/ansible/inventories/vms
     playbook: devops-360-ci-cd/ansible/spa-deploy.yml
     secrets: [ ssh_private_key ]
+    when:
+      event: tag
 
   notify:
     image: plugins/slack
