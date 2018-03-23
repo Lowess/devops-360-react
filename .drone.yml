@@ -6,39 +6,36 @@ pipeline:
     commands:
       - git clone https://github.com/Lowess/devops-360-ci-cd.git
 
-  # build:
-  #   image: node:alpine
-  #   commands:
-  #     - yarn
-  #     - yarn test
-  #     - yarn build
-  #     - tar -zcvf build.tar.gz -C build .
+  build:
+    image: node:alpine
+    commands:
+      - yarn
+      - yarn test
+      - yarn build
+      - tar -zcvf build.tar.gz -C build .
 
-  # release:
-  #   image: plugins/github-release
-  #   environement:
-  #     - PLUGIN_API_KEY=<github_token>
-  #   secrets: [ github_token ]
-  #   files:
-  #     - build.tar.gz
-  #   when:
-  #     event: tag
+  release:
+    image: plugins/github-release
+    environement:
+      - PLUGIN_API_KEY=<github_token>
+    secrets: [ github_token ]
+    files:
+      - build.tar.gz
+    when:
+      event: tag
 
   deploy:
     image: lowess/drone-ansible
     pull: true
     inventory: devops-360-ci-cd/ansible/inventories/vms
-    playbook: devops-360-ci-cd/ansible/spa.yml
-    galaxy_requirements: devops-360-ci-cd/ansible/requirements.yml
-    tags: spa
-    secrets: [ plugin_ssh_private_key ]
+    playbook: devops-360-ci-cd/ansible/spa-deploy.yml
+    secrets: [ ssh_private_key ]
 
-
-  # notify:
-  #   image: plugins/slack
-  #   environement:
-  #     - SLACK_WEBHOOK=<slack_webhook>
-  #   channel: drone
-  #   secrets: [ slack_webhook ]
-  #   when:
-  #     status: [ success, failure ]
+  notify:
+    image: plugins/slack
+    environement:
+      - SLACK_WEBHOOK=<slack_webhook>
+    channel: drone
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
