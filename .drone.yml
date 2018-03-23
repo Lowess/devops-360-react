@@ -32,6 +32,8 @@ pipeline:
 
   deploy:
     image: lowess/drone-ansible
+    environement:
+      - PLUGIN_SSH_PRIVATE_KEY=<ssh_private_key>
     pull: true
     inventory: devops-360-ci-cd/ansible/inventories/vms
     playbook: devops-360-ci-cd/ansible/spa-deploy.yml
