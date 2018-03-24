@@ -5,6 +5,15 @@ import './App.css';
 import GoGear from 'react-icons/lib/go/gear'
 
 const palettes = {
+  // Multicolor
+  "multicolor": [
+    "rgba(248, 255, 229, 1)",
+    "rgba(6, 214, 160, 1)",
+    "rgba(27, 154, 170, 1)",
+    "rgba(213, 41, 65, 1)",
+    "rgba(255, 196, 61, 1)"
+  ]
+
   // Blue theme
   "blue": [
     "rgba(201, 228, 202, 1)",
@@ -23,6 +32,7 @@ const palettes = {
     "rgba(88, 12, 31, 1)"
   ],
 
+  // Yellow theme
   "yellow": [
     "rgba(252, 216, 52, 1)",
     "rgba(228, 195, 29, 1)",
@@ -34,13 +44,19 @@ const palettes = {
 
 const subjects = {
   "devops": [
+    "Alerting",
     "Automation",
-    "Infrastructure as Code",
-    "Continuous integration",
     "Continuous deployment",
-    "Working with Developers",
+    "Continuous integration",
+    "Delivery",
+    "Deployment frequency",
+    "Infrastructure as Code",
+    "Integration",
     "Monitoring",
-    "Alerting"
+    "Orchestration",
+    "Pipeline",
+    "Practices",
+    "Working with Developers"
  ]
 }
 
@@ -51,9 +67,9 @@ class App extends Component {
 
     // Set the list of subjects to display
     this.subjects = subjects["devops"]
-    // Set the palette style
-    this.palette = palettes["yellow"]
 
+    // Set the palette style
+    this.palette = palettes["multicolor"]
 
     this.state = {
       subject: this.randomSubject(this.subjects),
