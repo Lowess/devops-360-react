@@ -12,7 +12,7 @@ const palettes = {
     "rgba(27, 154, 170, 1)",
     "rgba(213, 41, 65, 1)",
     "rgba(255, 196, 61, 1)"
-  ]
+  ],
 
   // Blue theme
   "blue": [
