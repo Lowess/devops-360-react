@@ -9,6 +9,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
+  - [npm install or yarn install or yarn](#npm-install-or-yarn-install-or-yarn)
   - [npm start or yarn start](#npm-start-or-yarn-start)
   - [npm test or yarn test](#npm-test-or-yarn-test)
   - [npm run build or yarn build](#npm-run-build-or-yarn-build)
@@ -165,7 +166,7 @@ They will not be included in the production build so you can use them for things
 
 In the project directory, you can run:
 
-### `npm install` or `yarn` or `yarn install`
+### `npm install` or `yarn install` or `yarn`
 
 Installs all dependencies for a project. The dependencies are retrieved from your project’s `package.json` file, and stored in the `yarn.lock` file.
 
