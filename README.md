@@ -165,6 +165,10 @@ They will not be included in the production build so you can use them for things
 
 In the project directory, you can run:
 
+### `npm install` or `yarn` or `yarn install`
+
+Installs all dependencies for a project. The dependencies are retrieved from your project’s `package.json` file, and stored in the `yarn.lock` file.
+
 ### `npm start` or `yarn start`
 
 Runs the app in the development mode.<br>
