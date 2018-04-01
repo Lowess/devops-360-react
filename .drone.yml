@@ -36,7 +36,7 @@ pipeline:
     image: lowess/drone-ansible
     pull: true
     inventory: devops-360-ci-cd/ansible/inventories/vms
-    playbook: devops-360-ci-cd/ansible/spa-deploy.yml
+    playbook: devops-360-ci-cd/ansible/deploy.yml
     secrets: [ ansible_private_key ]
     when:
       event: tag
