@@ -69,7 +69,7 @@ class App extends Component {
     this.subjects = subjects["devops"]
 
     // Set the palette style
-    this.palette = palettes["multicolor"]
+    this.palette = palettes["blue"]
 
     this.state = {
       subject: this.randomSubject(this.subjects),
