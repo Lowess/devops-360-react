@@ -1,0 +1,7 @@
+---
+
+pipeline:
+  echo:
+    image: node:alpine
+    commands:
+      - echo 'Run CI / CD Pipeline on Drone'
