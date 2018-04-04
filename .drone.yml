@@ -9,4 +9,10 @@ pipeline:
   test:
     image: node:alpine
     commands:
-      - yarn test 
+      - yarn test
+
+  notify:
+    image: plugins/slack
+    webhook: <slack_webhook>
+    channel: drone
+    secrets: [ slack_webhook ]
