@@ -57,6 +57,11 @@ const subjects = {
     "Pipeline",
     "Practices",
     "Working with Developers"
+ ],
+  "custom": [
+    "Le napalm ca calme!",
+    "On ira au marché de Bourinville",
+    "Ca c'est du dev samouraï!"
  ]
 }
 
@@ -66,10 +71,10 @@ class App extends Component {
     super(props);
 
     // Set the list of subjects to display
-    this.subjects = subjects["devops"]
+    this.subjects = subjects["custom"]
 
     // Set the palette style
-    this.palette = palettes["yellow"]
+    this.palette = palettes["multicolor"]
 
     this.state = {
       subject: this.randomSubject(this.subjects),
