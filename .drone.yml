@@ -29,24 +29,29 @@ steps:
 
   - name: release
     image: plugins/github-release
-    secrets: [ github_token ]
-    files:
-      - build.tar.gz
+    settings:
+      token:
+        from_secret: github_token
+      files:
+        - build.tar.gz
     when:
       event: tag
 
-  deploy:
+  - name: deploy
     image: lowess/drone-ansible
     pull: true
-    inventory: devops-360-ci-cd/ansible/inventories/vms
-    playbook: devops-360-ci-cd/ansible/deploy.yml
-    secrets: [ ansible_private_key ]
+    settings:
+      inventory: devops-360-ci-cd/ansible/inventories/vms
+      playbook: devops-360-ci-cd/ansible/deploy.yml
+      private_key:
+        from_secret: ansible_private_key
     when:
       event: tag
 
-  notify:
+  - name: notify
     image: plugins/slack
-    channel: drone
-    secrets: [ slack_webhook ]
+    settings:
+      channel: drone
+      secrets: [ slack_webhook ]
     when:
       status: [ success, failure ]
