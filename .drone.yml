@@ -10,17 +10,17 @@ steps:
       - git clone https://github.com/Lowess/devops-360-ci-cd.git
 
   - name: build
-    image: node:alpine
+    image: node:9-alpine
     commands:
       - yarn
 
   - name: test
-    image: node:alpine
+    image: node:9-alpine
     commands:
       - yarn test
 
   - name: pre-release
-    image: node:alpine
+    image: node:9-alpine
     commands:
       - yarn build
       - tar -zcvf build.tar.gz -C build .
