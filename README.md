@@ -1,3 +1,9 @@
+# Cheat-sheet
+```bash
+# Build
+docker run -it -v $(pwd):/src -w /src node:alpine yarn
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

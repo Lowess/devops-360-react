@@ -38,3 +38,8 @@
   font-size: 3em;
   color: #fff;
 }
+
+small {
+  font-family: Courier;
+  font-size: 0.4em;
+}

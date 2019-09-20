@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import GoGear from 'react-icons/lib/go/gear'
+
+const localIpUrl = require('local-ip-url');
 
 const palettes = {
   // Multicolor
@@ -69,12 +70,18 @@ class App extends Component {
     this.subjects = subjects["devops"]
 
     // Set the palette style
-    this.palette = palettes["yellow"]
+    this.palette = palettes["multicolor"]
 
     this.state = {
       subject: this.randomSubject(this.subjects),
       style: {
        color: this.randomColor(this.palette)
+      },
+      ip_private_style: {
+        color: "grey"
+      },
+      ip_public_style: {
+        color: "lightgrey"
       }
     }
   }
@@ -115,11 +122,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to DevOps-360-CI-CD</h1>
         </header>
         <div className="App-fullpage">
-          <h1><GoGear /> DevOps is all about
-          </h1>
+          <h2><GoGear /> DevOps is all about...</h2>
           <h3 style={this.state.style}>
             - {this.state.subject} -
           </h3>
+          <hr />
+          <small>
+            Served by <span style={this.state.ip_private_style}>{localIpUrl('private')}</span> / <span style={this.state.ip_public_style}>{localIpUrl('public')}</span>
+          </small>
         </div>
       </div>
     );
