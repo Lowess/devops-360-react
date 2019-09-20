@@ -52,6 +52,7 @@ steps:
     image: plugins/slack
     settings:
       channel: drone
-      secrets: [ slack_webhook ]
+      webhook:
+        from_secret: slack_webhook
     when:
       status: [ success, failure ]
