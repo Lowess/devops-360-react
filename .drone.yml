@@ -30,7 +30,7 @@ steps:
   - name: release
     image: plugins/github-release
     settings:
-      token:
+      api_key:
         from_secret: github_token
       files:
         - build.tar.gz
