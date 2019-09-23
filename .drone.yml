@@ -8,6 +8,7 @@ steps:
     image: plugins/git
     commands:
       - git clone https://github.com/Lowess/devops-360-ci-cd.git
+      - git checkout stable
 
   - name: build
     image: node:9-alpine
