@@ -54,8 +54,8 @@ steps:
         from_secret: aws_secret_access_key
       AWS_SESSION_TOKEN:
         from_secret: aws_session_token
-      AWS_SECURITY_TOKEN:
-        from_secret: aws_session_token
+      # AWS_SECURITY_TOKEN:
+      #   from_secret: aws_session_token
     when:
       event: tag
 
