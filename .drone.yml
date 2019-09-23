@@ -39,6 +39,21 @@ steps:
     when:
       event: tag
 
+- name: deploy-debug
+  image: lowess/drone-ansible
+  commands:
+    - env
+    - python  devops-360-ci-cd/ansible/inventories/aws/ec2.py
+  environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+      AWS_SESSION_TOKEN:
+        from_secret: aws_session_token
+      AWS_SECURITY_TOKEN:
+        from_secret: aws_session_token
+
   - name: deploy
     image: lowess/drone-ansible
     pull: true
@@ -54,8 +69,8 @@ steps:
         from_secret: aws_secret_access_key
       AWS_SESSION_TOKEN:
         from_secret: aws_session_token
-      # AWS_SECURITY_TOKEN:
-      #   from_secret: aws_session_token
+      AWS_SECURITY_TOKEN:
+        from_secret: aws_session_token
     when:
       event: tag
 
