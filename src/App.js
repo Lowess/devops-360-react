@@ -3,8 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import GoGear from 'react-icons/lib/go/gear'
 
-const localIpUrl = require('local-ip-url');
-
 const palettes = {
   // Multicolor
   "multicolor": [
@@ -70,18 +68,15 @@ class App extends Component {
     this.subjects = subjects["devops"]
 
     // Set the palette style
-    this.palette = palettes["multicolor"]
+    this.palette = palettes["blue"]
 
     this.state = {
       subject: this.randomSubject(this.subjects),
       style: {
        color: this.randomColor(this.palette)
       },
-      ip_private_style: {
-        color: "grey"
-      },
-      ip_public_style: {
-        color: "lightgrey"
+      server_style: {
+        color: "lighgrey"
       }
     }
   }
@@ -128,7 +123,7 @@ class App extends Component {
           </h3>
           <hr />
           <small>
-            Served by <span style={this.state.ip_private_style}>{localIpUrl('private')}</span> / <span style={this.state.ip_public_style}>{localIpUrl('public')}</span>
+            Served by <span style={this.state.server_style}></span>
           </small>
         </div>
       </div>
